@@ -1,0 +1,1 @@
+<a class="btn btn-primary" href="{{route('store-manage')}}">进入管理中心</a>
