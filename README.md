@@ -1,11 +1,12 @@
 laravel-admin B2C商城扩展
 ======
 
-注意：请先安装好 `https://github.com/z-song/laravel-admin`
+
 
 > 思想：提供可管理的UI后台，不提供客户端UI，提供静态方法来操作数据。安装即可使用，不影响原系统。
 
 ## 安装
+注意：请先安装好 `https://github.com/z-song/laravel-admin`
 ```
 composer require small-rural-dog/store
 ```
