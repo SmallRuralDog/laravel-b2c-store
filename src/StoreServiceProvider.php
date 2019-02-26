@@ -27,7 +27,7 @@ class StoreServiceProvider extends ServiceProvider
         }
 
         $this->publishes([
-            __DIR__ . '../config/store.php' => config_path('store.php'),
+            __DIR__ . '/../config/store.php' => config_path('store.php'),
         ]);
 
         if ($migrations = $extension->migrations()) {
