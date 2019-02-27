@@ -31,6 +31,7 @@ composer require small-rural-dog/store
 
 php artisan vendor:publish --tag=store --force
 
+php artisan store:update
 ```
 
 ## 功能（初步，可能改动很大）
