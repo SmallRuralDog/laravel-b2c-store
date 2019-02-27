@@ -27,7 +27,7 @@ php artisan admin:import store
 
 ## 升级
 ```
-composer update small-rural-dog/store
+composer require small-rural-dog/store
 
 php artisan vendor:publish --tag=store --force
 
