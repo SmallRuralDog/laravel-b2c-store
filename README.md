@@ -10,15 +10,15 @@ laravel-admin B2C商城扩展
 ```
 composer require small-rural-dog/store
 ```
-## 发布资源
+### 发布资源
 ```
 php artisan vendor:publish --provider="SmallRuralDog\Store\StoreServiceProvider"
 ```
-## 自定义配置
+### 自定义配置
 
 配置 `config/store.php` ，默认可忽略
 
-## 执行安装命令
+### 执行安装命令
 ```
 php artisan store:install
 
