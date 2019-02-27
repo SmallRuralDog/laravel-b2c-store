@@ -25,6 +25,14 @@ php artisan store:install
 php artisan admin:import store
 ```
 
+## 升级
+```
+composer require small-rural-dog/store
+
+php artisan vendor:publish --tag=store --force
+
+```
+
 ## 功能（初步，可能改动很大）
 
 - 产品管理
