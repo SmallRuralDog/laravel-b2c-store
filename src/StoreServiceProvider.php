@@ -4,12 +4,14 @@ namespace SmallRuralDog\Store;
 
 use Illuminate\Support\ServiceProvider;
 use SmallRuralDog\Store\Commands\InstallCommand;
+use SmallRuralDog\Store\Commands\UpdateCommand;
 
 class StoreServiceProvider extends ServiceProvider
 {
 
     protected $commands = [
-        InstallCommand::class
+        InstallCommand::class,
+        UpdateCommand::class
     ];
 
     /**

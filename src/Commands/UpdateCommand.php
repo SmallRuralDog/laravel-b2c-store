@@ -7,21 +7,21 @@ namespace SmallRuralDog\Store\Commands;
 use Illuminate\Console\Command;
 use SmallRuralDog\Store\Models\StoreTablesSeeder;
 
-class InstallCommand extends Command
+class UpdateCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'store:install';
+    protected $signature = 'store:update';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Install the store package';
+    protected $description = 'Update the store package';
 
     /**
      * Create a new command instance.
@@ -41,13 +41,18 @@ class InstallCommand extends Command
     public function handle()
     {
 
+        $this->call('vendor:publish --tag=store --force');
+
+
         $this->call('migrate');
 
-        $this->info('开始安装');
+
+
+        $this->info('开始更新');
 
 
         $this->call('db:seed', ['--class' => StoreTablesSeeder::class]);
 
-        $this->info('数据更新成功');
+        $this->info('更新成功');
     }
 }
