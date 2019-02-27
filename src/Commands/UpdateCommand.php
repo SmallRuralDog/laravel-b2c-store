@@ -40,19 +40,10 @@ class UpdateCommand extends Command
      */
     public function handle()
     {
-
-        $this->call('vendor:publish --tag=store --force');
-
-
+        $this->info('更新数据库');
         $this->call('migrate');
-
-
-
-        $this->info('开始更新');
-
-
+        $this->info('更新数据');
         $this->call('db:seed', ['--class' => StoreTablesSeeder::class]);
-
         $this->info('更新成功');
     }
 }
