@@ -26,8 +26,8 @@ class MediaController extends ApiController
 
     public function getMediaList(Request $request)
     {
-        $mc_id = $request->input("category_id", 0);
-        $name = $request->input("query");
+        $mc_id = $request->input("query.mc_id", 0);
+        $name= $request->input("query.name");
         $pre = $request->input("pre", 18);
         $store = $this->store();
         $orm = $this->mediaService->getListByStore($store, Media::IMAGE, $mc_id);
@@ -65,10 +65,11 @@ class MediaController extends ApiController
     public function createMediaCategoryList(Request $request)
     {
         $validator = \Validator::make($request->all(), [
-            'name' => ['required'],
+            'name' => ['required','max:4'],
             'type' => ['required', Rule::in([Media::IMAGE, Media::VIDEO, Media::AUDIO])]
         ], [
             'name.required' => '请输入名称',
+            'type.in' => '类型错误'
         ]);
         if ($validator->fails()) {
             return $this->failed($validator->errors()->first());
@@ -77,10 +78,9 @@ class MediaController extends ApiController
         $name = $request->input('name');
         $type = $request->input('type');
 
-        list($obj, $list) = $this->mediaService->createListByStore($name, $store, $type);
+        $obj = $this->mediaService->createListByStore($name, $store, $type);
 
         $data['item'] = \SmallRuralDog\Store\Http\Resources\MediaCategory::make($obj);
-        $data['list'] = MediaCategoryCollection::make($list);
         return $this->success($data);
     }
 

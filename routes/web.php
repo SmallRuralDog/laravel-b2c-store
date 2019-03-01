@@ -37,7 +37,7 @@ Route::group([
             Route::post('delMediaCategory', 'SmallRuralDog\Store\Http\Controllers\Api\V1\MediaController@delMediaCategory');
             Route::post('delMedia', 'SmallRuralDog\Store\Http\Controllers\Api\V1\MediaController@delMedia');
             Route::post('changeMedia', 'SmallRuralDog\Store\Http\Controllers\Api\V1\MediaController@changeMedia');
-            Route::get('getMediaCategoryList', 'SmallRuralDog\Store\Http\Controllers\Api\V1\MediaController@getMediaCategoryList');
+            Route::post('getMediaCategoryList', 'SmallRuralDog\Store\Http\Controllers\Api\V1\MediaController@getMediaCategoryList');
             Route::post('createMediaCategoryList', 'SmallRuralDog\Store\Http\Controllers\Api\V1\MediaController@createMediaCategoryList');
             Route::post('mediaUpload', "SmallRuralDog\Store\Http\Controllers\Api\V1\MediaController@upload")->name("store-media-upload");//上传
 

@@ -46,7 +46,7 @@ class MediaService
     public function createListByStore($name, $store, $type)
     {
         if ($this->checkName($name, $store, $type)) {
-            throw new \Exception('名称已存在');
+            abort(400, '名称已存在');
         }
 
         $obj = MediaCategory::query()->create([
@@ -55,7 +55,7 @@ class MediaService
             'name' => $name,
             'type' => $type
         ]);
-        return [$obj, $this->getListByStore($store, $type)];
+        return $obj;
     }
 
 
