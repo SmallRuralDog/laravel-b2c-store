@@ -5,6 +5,9 @@ laravel-admin B2C商城扩展
 
 > 提供可管理的UI后台，无客户端UI，调用静态方法来操作数据。安装即可使用，不影响原系统。
 
+
+需要后台UI源码的可以到这里：[https://github.com/SmallRuralDog/laravel-b2c-store-react](https://github.com/SmallRuralDog/laravel-b2c-store-react)
+
 ## 安装
 注意：请先安装好 `https://github.com/z-song/laravel-admin`
 ```
